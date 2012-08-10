@@ -17,6 +17,8 @@ on early-init
 
 on fs
     mount_all /fstab.stingray
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/SDC /data/media wait noatime nosuid nodev nomblk_io_submit
+    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/sdcard /data/media wait noatime nosuid nodev nomblk_io_submit
     setprop ro.crypto.fuse_sdcard true
 
 on post-fs-data
